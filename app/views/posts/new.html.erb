@@ -11,7 +11,7 @@
     </ul>
   </div>
   <div class="span-6">
-    <%= form_for[@topic, @post], html: { class: 'form-horizontal' } do |f| %>
+    <%= form_for [@topic, @post], html: { class: 'form-horizontal' } do |f| %>
       <div class="control-group">
         <%= f.label :title, class: 'control-label' %>
         <div class="controls">
@@ -29,6 +29,6 @@
           <%= f.submit "Save", class: 'btn' %>
         </div>
       </div>
-    <% end %>
+      <% end %>
   </div>
 </div>
