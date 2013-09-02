@@ -12,5 +12,5 @@ class Post < ActiveRecord::Base
   validates :topic, presence: true
   validates :user, presence: true  
 
-  mount_uploader :image, ImagesUploader # add this line.
+  mount_uploader :image, ImageUploader # add this line.
 end
