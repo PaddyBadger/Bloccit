@@ -39,6 +39,15 @@ rand(4..10).times do
     topics.rotate! # add this line to move the first topic to the last, so that posts get assigned to different topics.
 
     # comments...
+  rand(6..14).times do
+    post = post.first
+    c = u.comments.create(
+      post: post,
+      body: Faker::Lorem.paragraphs(rand(1..4)).join("\n"))
+    c.update_attribute(:created_at, Time.now - rand(600..31536000))
+
+    posts.rotate!
+    end
   end
 end
 
