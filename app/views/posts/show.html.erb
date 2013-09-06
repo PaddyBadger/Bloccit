@@ -13,8 +13,12 @@
         
     <p><%= image_tag(@post.image.thumb.url) if @post.image? %></p>
     
-    <p><%= markdown @comment.body %></p>
-     <%= render partial: 'comment/_comment.html.erb', collection: { post: @post, comment: @comment } %>
+    <%= render @comments %>
+    <% if can? :create, Comment %>
+      <h5>Create Comment</h5>
+      <%= render partial: "comments/form", locals:{ topic: @topic, post: @post, comment: @comment } %>
+    <% end %>
+
   </div>
   <div class="span4">
     <% if can? :edit, @post %>

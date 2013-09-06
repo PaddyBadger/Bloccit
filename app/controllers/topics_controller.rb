@@ -21,8 +21,8 @@ class TopicsController < ApplicationController
   end
 
   def show
+    @topic = Topic.find(params[:id])
     @posts = @topic.posts.paginate(page: params[:page], per_page: 10)
-    @posts = @topic.posts
   end
 
   def edit
