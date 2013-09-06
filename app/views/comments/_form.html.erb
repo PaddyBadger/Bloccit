@@ -10,7 +10,7 @@
     </div>
   <% end %>
   <%= control_group_tag(comment.errors[:body]) do %>
-    <%= f.label :body, class: 'control-label' %> <!-- Ask Adam, how to change labels on forms without breaking -->
+    <!-- Ask Adam, how to change labels on forms without breaking -->
     <div class="input-large"> <!-- Ask Adam - how to change the input form html without breaking -->
       <%= f.text_area :body, rows: 4 %>
     </div>
