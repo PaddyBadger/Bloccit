@@ -1,0 +1,13 @@
+<div class="favorite">
+  <% if favorite = current_user.favorited(post) %>
+    Favorited
+  <% else %>
+    Want to favorite this?
+  <% end %>
+</div>
+
+<%= form_for [topic, post, Favorite.new] do |f| %>
+  <%= button_tag type: 'submit', class: 'btn btn-small' do %>
+    <i class="icon-star"> </i>&nbsp; Favorite
+  <% end %>
+<% end %>
