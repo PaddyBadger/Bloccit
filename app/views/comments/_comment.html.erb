@@ -1,17 +1,16 @@
-<div class="media"> 
-    <%= link_to '#', class: 'pull-left' do %>
-      <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
-    <% end %>
-    <p><strong><%= comment.user.name %></strong> Commented <%= comment.created_at %></p>
-  <!-- 
-  <a class="pull-left"><%= comment.user.avatar %>
-  <img class="media-object>
-  </a> ask Adam -->
+<%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
+  <%= link_to '#', class: 'pull-left' do %>
+    <%= image_tag(comment.user.avatar.small.url) if comment.user.avatar? %>
+  <% end %>
+  <div class="media-body">
+    <small>
+      <%= comment.user.name %> commented <%= time_ago_in_words(comment.created_at) %> ago
+      <% if can? :destroy, comment %>
+        | <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
+      <% end %>
+    </small>
     <p><%= comment.body %></p>
-    <% if can? :destroy, comment %>
-      <%= link_to "Delete", [@topic, @post, comment], method: :delete %>
-    <% end %>
-    
- </div>
+  </div>
+<% end %>
 
  
