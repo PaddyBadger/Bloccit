@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(:version => 20130909144757) do
     t.string   "avatar"
     t.string   "provider"
     t.string   "uid"
-    t.boolean  "email_favourites",       :default => false
+    t.boolean  "email_favorites",        :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
