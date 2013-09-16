@@ -31,6 +31,5 @@ require 'spec_helper'
         post.should_receive(:update_rank)
         Vote.create(value: 1, post: post)
       end
-    end
 
   end
