@@ -35,6 +35,13 @@ gem 'will_paginate', '~> 3.0'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
