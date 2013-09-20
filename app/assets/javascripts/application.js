@@ -17,12 +17,17 @@
 
 $(document).ready(function() {
   $(".js-show-hide").click(function() {
+    console.log("fire");
     var selector = "." + $(this).attr('data-selector');
     if ($(selector).is(":visible")) {
+      
       $(selector).slideUp();
+      console.log("slid down");
     }
     else {
+      
       $(selector).slideDown();
+      console.log("slid up");
     }
     return false;
   });

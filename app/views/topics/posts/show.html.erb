@@ -14,7 +14,7 @@
         
     <p><%= image_tag(@post.image.thumb.url) if @post.image? %></p>
     
-    <%= render @comments %>
+    <%= render partial: "comments/comment", collection: @comments,locals: {topic: @topic, post: @posts} %>
     <% if can? :create, Comment %>
       <hr/>
     <a href="#" class="js-show-hide" data-selector="js-new-comment">Add Comment</a>
