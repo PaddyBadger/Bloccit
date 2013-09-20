@@ -16,11 +16,11 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: bloccit_development
+  database: bloccit_test
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: bloccit_development
+  database: bloccit_production
   pool: 5
