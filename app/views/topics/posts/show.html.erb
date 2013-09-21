@@ -13,8 +13,10 @@
     <p><%= markdown @post.body %></p>
         
     <p><%= image_tag(@post.image.thumb.url) if @post.image? %></p>
-
-    <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
+    
+    <div class="js-comments">  
+      <h2 class='js-comments-count'><%= @comments.count %> Comments</h2>
+    </div>
     
     <%= render partial: "comments/comment", collection: @comments,locals: {topic: @topic, post: @posts} %>
     <% if can? :create, Comment %>
